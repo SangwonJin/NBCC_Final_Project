@@ -1,0 +1,170 @@
+﻿@model GreenSwitchWebFrontEnd.Models.EmployeeVM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>User Detail</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.MiddleInitial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.MiddleInitial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EmployeeId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supervisor.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supervisor.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.StreetAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.StreetAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.PostalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.PostalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.SIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.SIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.SeniorityDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.SeniorityDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.JobStartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.JobStartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.WorkPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.WorkPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.CellPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.CellPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EmailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EmailAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.IsActive)
+        </dd>
+
+    </dl>
+</div>
+<p>
+  @if (ViewBag.IsProfile == "Profile")
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Employee.EmployeeId })
+    }
+    @Html.ActionLink("Back", "Index", "Home")
+</p>

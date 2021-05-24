@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Models.EmployeeLists>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Create Review </h2>
+
+    <h3>Your Name: @ViewBag.SupervisorName</h3>
+<p style="color:red;">@ViewBag.Message</p>
+@if (Model != null)
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.ActionLink("Create Review", "Create", new { emploeeId = item.EmployeeId })
+
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+

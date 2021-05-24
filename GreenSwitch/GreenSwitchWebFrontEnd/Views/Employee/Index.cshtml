@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Models.EmployeeLists>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <div style="background-color:ghostwhite;">
+        <h2>Index</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div>
+                <label>Search Employee</label>
+                @Html.TextBox("searchString")
+                <input type="submit" value="Search" /><div>(Enter a Employee ID or Full or Partial Last Name:)</div>
+
+                <p style="color:red">  @ViewBag.Message</p>
+            </div>
+            if (Model != null)
+            {
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmployeeId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FullName)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmployeeId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FullName)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Detail", "Details", new { id = item.EmployeeId }, FormMethod.Post)
+                                @*@using (Html.BeginForm("Details", "Employee", new { id = item.EmployeeId }, FormMethod.Post))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="id" value="@item.EmployeeId" />
+                                    <input type="submit" class="dASButton" value="Details" />
+                                }*@
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            }
+
+        }
+        @Html.ActionLink("Home", "Index", "Home")
+    </div>

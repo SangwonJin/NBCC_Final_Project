@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenSwitch - @ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background: url('/images/GreenSwitchBG.jpg');background-repeat:no-repeat;background-size:cover;">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("GreenSwitch", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @if (Session["loggedInEmp"] != null)
+                    {
+                        <li>@Html.ActionLink("Profile", "Details", "Employee")</li>
+                    }
+
+                    @if (Session["username"] != null)
+                    {
+
+                        if (Session["EmployeeType"].ToString().ToLower() == "hrsupervisor" || Session["EmployeeType"].ToString().ToLower() == "hremployee")
+                        {
+                            <li>@Html.ActionLink("Employee", "index", "Employee")</li>
+                            <li>@Html.ActionLink("Modify Department", "index", "Department")</li>
+                        }
+
+                        if (Session["EmployeeType"].ToString().ToLower() == "regularsupervisor")
+                        {
+
+                            <li>
+                                @Html.ActionLink("Modify Department", "Edit", "Department", new { supervisorId = Session["employeeId"] }, "")
+                            </li>
+                        }
+
+                        if (Session["EmployeeType"].ToString().ToLower() == "hrsupervisor" || Session["EmployeeType"].ToString().ToLower() == "regularsupervisor")
+                        {
+
+                            <li>@Html.ActionLink("Process PO", "ProcessPOIndex", "PurchaseOrder")</li>
+                            <li>@Html.ActionLink("Review", "index", "Review")</li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("View Review", "ViewReview", "Review", new { empId = Session["employeeId"] }, "")</li>
+                        }
+
+
+                        if (Session["EmployeeType"].ToString().ToLower() == "hrsupervisor" || Session["EmployeeType"].ToString().ToLower() == "hremployee"
+                            || Session["EmployeeType"].ToString().ToLower() == "regularsupervisor" || Session["EmployeeType"].ToString().ToLower() == "regularemployee")
+                        {
+                            <li>@Html.ActionLink("Create Order", "Create", "PurchaseOrder")</li>
+                            @*<li>@Html.ActionLink("Modify PO", "Index", "PurchaseOrder")</li>*@
+                        }
+                        <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "Home")</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer style="color:red;font-weight:bold;">
+            <p>&copy; @DateTime.Now.Year - GreenSwitch</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

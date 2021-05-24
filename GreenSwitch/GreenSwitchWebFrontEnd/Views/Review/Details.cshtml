@@ -1,0 +1,87 @@
+﻿@model GreenSwitchWebFrontEnd.Models.ReviewVM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Review Detail</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Comment
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Review.Comment)
+        </dd>
+        <dt>
+            Year
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Review.ReviewDate.Year)
+        </dd>
+
+        <dt>
+            Quarter
+        </dt>
+
+        @if (Model.Review.ReviewDate.Month >= 9)
+        {
+            <dd>
+                4
+            </dd>
+        }
+
+        else if (Model.Review.ReviewDate.Month >= 6)
+        {
+            <dd>
+                3
+            </dd>
+        }
+
+        else if (Model.Review.ReviewDate.Month >= 4)
+        {
+            <dd>
+                2
+            </dd>
+        }
+        else if (Model.Review.ReviewDate.Month <= 3)
+        {
+            <dd>
+                1
+            </dd>
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.Review.ReviewDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Review.ReviewDate.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Review.Performance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Review.Performance)
+        </dd>
+
+        <dt>
+            Supervisor @Html.DisplayNameFor(model => model.supervisor.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supervisor.FullName)
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink("Back to List", "ViewReview", new { empId = Model.Review.EmployeeId })
+</p>

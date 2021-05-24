@@ -1,0 +1,11 @@
+
+GET http://127.0.0.1:44355/api/employee/jin
+###
+GET http://127.0.0.1:44355/api/employee/jin/1000004
+###
+GET http://127.0.0.1:44355/api/department
+###
+
+GET http://127.0.0.1:44355/api/employee/department/all/1
+###
+GET http://127.0.0.1:44355/api/employee/department/all

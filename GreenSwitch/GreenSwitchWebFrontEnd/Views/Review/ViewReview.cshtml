@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Models.Review>
+
+@{
+    ViewBag.Title = "ViewReview";
+}
+
+<h2>ViewReview</h2>
+
+@if (ViewBag.Message != "")
+{
+    <p style="color:red;">@ViewBag.Message</p>
+            }
+            else
+            {
+
+            
+<table class="table">
+    <tr>
+        <th>
+            Year
+        </th>
+        <th>
+            Quarter
+        </th>
+        <th>
+            Date
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviewDate.Year)
+            </td>
+
+            @if (item.ReviewDate.Month >= 9)
+            {
+                <td>4</td>
+            }
+
+            else if (item.ReviewDate.Month >= 6)
+            {
+                <td>3</td>
+            }
+
+            else if (item.ReviewDate.Month >= 4)
+            {
+                <td>2</td>
+            }
+            else if (item.ReviewDate.Month <= 3)
+            {
+                <td>1</td>
+            }
+
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviewDate.Date)
+            </td>
+
+            <td>
+                @Html.ActionLink("Details", "Details", "Review", new { reviewDate = item.ReviewDate, rating = item.Performance, supervisorId = item.SuperviosrId, empId = item.EmployeeId, comment = item.Comment }, "")
+
+
+            </td>
+        </tr>
+    }
+
+</table>
+}

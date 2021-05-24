@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@if(Session["username"] != null)
+{
+    <h1>Welcome <span style="color:red;">@Session["username"].ToString().ToUpper()</span>!</h1>
+}
+<div class="jumbotron" style="background-color:lightgreen">
+    <h1>GreenSwitch</h1>
+    <p class="lead">Welcome to GreenSwitch. We are a landscaping company trusted by thousands in the neighbourhood.</p>
+    @*<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Design & Build</h2>
+        <p>
+            At GreenSwitch, our trusted team can design your exterior environment to your ideas.
+        </p>
+        @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
+    </div>
+    <div class="col-md-4">
+        <h2>Maintenance</h2>
+        <p>For over 15 years our team has maintained countless outdoor environments throughout the province. The only job you'll have is to enjoy the outstanding work our team will do for you! </p>
+        @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>*@
+    </div>
+    <div class="col-md-4">
+        <h2>Snow & Ice Removal</h2>
+        <p>We all know that Winter can be harsh in New Brunswick, so we also do Snow & Ice Removal during Winter times! Give us a shout to learn more.</p>
+        @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>*@
+    </div>   
+</div>
+<div class="row">
+    <div class="col-md-12" style="text-align:center;">
+        <img src="~/images/GreenSwitch.png" />
+    </div>
+</div>

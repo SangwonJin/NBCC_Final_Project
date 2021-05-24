@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="First name:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_middleName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Middle Initial:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_lastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="last Name:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_middleName"
+        app:layout_constraintTop_toBottomOf="@+id/tv_middleName" />
+
+    <TextView
+        android:id="@+id/tv_officeNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:text="Office Number:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tv_name"
+        app:layout_constraintTop_toTopOf="@+id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_officeLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Office Location:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/tv_officePosition"
+        app:layout_constraintTop_toTopOf="@+id/tv_lastName" />
+
+    <TextView
+        android:id="@+id/tv_officePosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Job Title"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_officeNumber"
+        app:layout_constraintTop_toTopOf="@+id/tv_middleName" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:background="#838383"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:background="#838383"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_name"
+        app:layout_constraintStart_toEndOf="@+id/tv_name"
+        app:layout_constraintTop_toTopOf="@+id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_middleName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_middleName"
+        app:layout_constraintStart_toEndOf="@+id/tv_middleName"
+        app:layout_constraintTop_toTopOf="@+id/tv_middleName" />
+
+    <TextView
+        android:id="@+id/tv_lastName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_lastName"
+        app:layout_constraintStart_toEndOf="@+id/tv_lastName"
+        app:layout_constraintTop_toTopOf="@+id/tv_lastName" />
+
+    <TextView
+        android:id="@+id/tv_officeNumber2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_officeNumber"
+        app:layout_constraintStart_toEndOf="@+id/tv_officeNumber"
+        app:layout_constraintTop_toTopOf="@+id/tv_officeNumber" />
+
+    <TextView
+        android:id="@+id/tv_officePosition2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_officePosition"
+        app:layout_constraintStart_toEndOf="@+id/tv_officePosition"
+        app:layout_constraintTop_toTopOf="@+id/tv_officePosition" />
+
+    <TextView
+        android:id="@+id/tv_officeLocation2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_officeLocation"
+        app:layout_constraintStart_toEndOf="@+id/tv_officeLocation"
+        app:layout_constraintTop_toTopOf="@+id/tv_officeLocation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

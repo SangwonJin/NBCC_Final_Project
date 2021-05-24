@@ -1,0 +1,44 @@
+﻿@model Models.Authentication
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Login</h2>
+
+<body>
+    <div style="margin:0 auto; text-align: center; border: 2px; border-style: solid; width:50%;padding:2% 0 2% 2%;background-color:bisque">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(a => a.EmployeeId)</td> @*Label to display username*@
+                    <td>@Html.TextBoxFor(a => a.EmployeeId)</td> @*Textbox for user input*@
+                    <td>@Html.ValidationMessageFor(a => a.EmployeeId)</td>
+                </tr>
+                <tr>
+                    <td style="padding-top:5%;">@Html.LabelFor(a => a.Password)</td> @*Label for pasword*@
+                    <td style="padding-top:5%;">@Html.PasswordFor(a => a.Password)</td> @*Password box for inputting password*@
+                    <td style="padding-top:5%;">@Html.ValidationMessageFor(a => a.Password)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <br />
+                        <input type="submit" value="Submit" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="color:red">
+                        @ViewBag.Message
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+</body>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")    
+}
